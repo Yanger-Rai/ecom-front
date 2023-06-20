@@ -46,3 +46,11 @@ h2 {
 .btn-cart:hover {
   @apply bg-primary text-white border-primary shadow-lg transition-all;
 }
+
+.box-div {
+  @apply bg-white rounded-md p-7 mt-10;
+}
+
+.btn-checkout {
+  @apply bg-black text-white py-1 px-2 rounded-md text-sm;
+}

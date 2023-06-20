@@ -1,10 +1,12 @@
 "use client";
+import { CartContext } from "@/context/CartContext/page";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CartIcon from "./icons/Cart";
 
 const Featured = () => {
   const [featuredProduct, setFeaturedProduct] = useState("");
+  const { addProduct } = useContext(CartContext);
 
   useEffect(() => {
     const getFeaturedProd = async () => {
@@ -33,7 +35,10 @@ const Featured = () => {
               <Link href={"/"} className="btn-default">
                 read more
               </Link>
-              <button className=" inline-flex gap-2 items-center btn-primary">
+              <button
+                onClick={() => addProduct(featuredProduct?._id)}
+                className=" inline-flex gap-2 items-center btn-primary"
+              >
                 <CartIcon />
                 Add to cart
               </button>
